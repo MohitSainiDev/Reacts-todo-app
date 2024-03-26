@@ -15,5 +15,9 @@ export function deleteTodoApi(username,id){
      return apiClient.delete(`/users/${username}/todos/${id}`)
 }
 
+export function retrieveTodoApi(username,id){
+    return apiClient.get(`/users/${username}/todos/${id}`)
+}
+
 
     
