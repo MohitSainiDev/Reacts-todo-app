@@ -59,6 +59,10 @@ useEffect( ()=> refreshTodos(),[])
         navigate(`/todo/${id}`)
        
     }
+    function addNewTodo(){
+        navigate(`/todo/-1`)
+       
+    }
 
 
 
@@ -98,6 +102,7 @@ useEffect( ()=> refreshTodos(),[])
 
                 </table>
             </div>
+            <div className="btn btn-success m-5" onClick={addNewTodo}>Add new Todo</div>
         </div>
     )
 }

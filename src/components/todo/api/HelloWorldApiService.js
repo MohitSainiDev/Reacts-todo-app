@@ -1,11 +1,6 @@
 
-import axios from 'axios'
 
-const apiClient = axios.create(
-    {
-        baseURL: 'http://localhost:8080'
-    }
-)
+import { apiClient } from './ApiClient'
 
 export function retrieveHelloWorldBean(){
     return  apiClient.get('/hello-world-bean')
@@ -14,7 +9,15 @@ export function retrieveHelloWorldBean(){
 /*export const retrieveHelloWorldPathVariable
     = (username) => axios.get(`http://localhost:8080/hello-world/path-variable/${username}`)*/
 
-    export function retrieveHelloWorldPathVariable(username){
+    export function retrieveHelloWorldPathVariable(username,token){
         return  apiClient.get(`/hello-world/path-variable/${username}`)
+    }
+
+    export function executeBasicAuthenticationService(token){
+        return  apiClient.get(`/basicauth`,{
+            headers:{
+                Authorization:token
+            }
+        })
     }
     
